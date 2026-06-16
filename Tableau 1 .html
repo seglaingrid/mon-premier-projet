@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon TP Tableau - V2 Sans le trait</title>
+    <style>
+        /* Style général de la page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* --- STYLE DU TABLEAU --- */
+        .mon-tableau {
+            border-collapse: collapse; 
+            
+            /* BORDURES EXTÉRIEURES : Doubles, épaisses et jaunes */
+            border: 8px double #FFD700; 
+            
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: #ffffff;
+        }
+
+        /* Style de toutes les cellules */
+        .mon-tableau td {
+            border: 2px solid #000000; /* Bordures intérieures simples et noires */
+            padding: 15px;
+            width: 120px;
+            height: 70px;
+            vertical-align: middle;
+        }
+
+        /* 1. ENEAM en bleu (prend 2 colonnes de large) */
+        .case-eneam {
+            color: #0000FF;
+        }
+
+        /* 2. EPAC aligné verticalement (Prend désormais 3 lignes pour monter tout en haut !) */
+        .case-epac {
+            writing-mode: vertical-lr; /* Écrit de haut en bas */
+            text-orientation: upright;  /* Garde les lettres droites */
+            letter-spacing: 8px;
+            width: 50px !important;
+        }
+
+        /* 3. IG oblique avec un fond bleu ciel (prend 2 lignes de haut) */
+        .case-ig {
+            background-color: #87CEEB; 
+        }
+        .case-ig span {
+            display: inline-block;
+            transform: rotate(-15deg); 
+        }
+
+        /* 4. IA clignote (Fond noir et texte blanc) */
+        .case-ia {
+            background-color: #000000;
+            color: #FFFFFF;
+            animation: effetClignotant 1s infinite alternate;
+        }
+        @keyframes effetClignotant {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Case Claude */
+        .case-claude {
+            color: #000000;
+        }
+
+        /* 5. Flash oblique */
+        .case-flash span {
+            display: inline-block;
+            transform: rotate(-25deg); 
+        }
+
+        /* 6. Programmation oblique (prend 2 colonnes) */
+        .case-programmation span {
+            display: inline-block;
+            transform: rotate(-4deg); 
+        }
+    </style>
+</head>
+<body>
+
+    <table class="mon-tableau">
+        <tr>
+            <td rowspan="3" class="case-epac">EPAC</td>
+            <td colspan="2" class="case-eneam">ENEAM</td>
+        </tr>
+        
+        <tr>
+            <td rowspan="2" class="case-ig"><span>IG</span></td>
+            <td class="case-ia">IA</td>
+        </tr>
+        
+        <tr>
+            <td class="case-claude">Claude</td>
+        </tr>
+        
+        <tr>
+            <td class="case-flash"><span>Flash</span></td>
+            <td colspan="2" class="case-programmation"><span>Programmation</span></td>
+        </tr>
+    </table>
+
+</body>
+</html>

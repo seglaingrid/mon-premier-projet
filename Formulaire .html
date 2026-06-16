@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Formulaires</title>
+    <style>
+        /* Styles Généraux */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        /* Groupes de champs (Fieldset) */
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #fbfbfb;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #3498db;
+            padding: 0 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Éléments de formulaire individuels */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Champs de texte, mot de passe, email et select */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+            outline: none;
+        }
+
+        /* Boutons Radio et Checkboxes */
+        .radio-group, .checkbox-group {
+            margin: 15px 0;
+        }
+
+        .radio-group p, .checkbox-group p {
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .options-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .options-inline label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: normal;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Zone des Boutons */
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .btn-submit {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #27ae60;
+        }
+
+        .btn-reset {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-useless {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .btn-useless:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Les Formulaires</h1>
+
+    <form>
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+            
+            <div class="form-group">
+                <label for="nom">Quel est votre nom ?</label>
+                <input type="text" id="nom" name="nom" value="SEGLA">
+            </div>
+
+            <div class="form-group">
+                <label for="prenom">Quel est votre prénom ?</label>
+                <input type="text" id="prenom" name="prenom" value="Ingrid">
+            </div>
+
+            <div class="form-group">
+                <label for="mdp">Votre mot de passe :</label>
+                <input type="password" id="mdp" name="mdp">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Quel est votre e-mail ?</label>
+                <input type="email" id="email" name="email">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Origine</legend>
+            <div class="form-group">
+                <label for="pays">Dans quel pays habitez-vous ?</label>
+                <select id="pays" name="pays">
+                    <option value="benin" selected>Bénin</option>
+                    <option value="nigeria">Nigeria</option>
+                    <option value="togo">Togo</option>
+                    <option value="niger">Niger</option>
+                    <option value="cote_ivoire">Côte d'Ivoire</option>
+                    <option value="burkina_faso">Burkina Faso</option>
+                    <option value="senegal">Sénégal</option>
+                    <option value="ghana">Ghana</option>
+                    <option value="cameroun">Cameroun</option>
+                    <option value="mali">Mali</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Votre souhait</legend>
+            
+            <div class="radio-group">
+                <p>Faites un souhait que vous voudriez voir exaucé :</p>
+                <div class="options-inline">
+                    <label><input type="radio" name="souhait" value="riche"> Être riche</label>
+                    <label><input type="radio" name="souhait" value="celebre"> Être célèbre</label>
+                    <label><input type="radio" name="souhait" value="intelligent"> Être encore plus intelligent</label>
+                    <label><input type="radio" name="souhait" value="autre"> Autre...</label>
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <p>Cochez les aliments que vous aimez manger :</p>
+                <div class="options-inline">
+                    <label><input type="checkbox" name="aliments" value="macaroni"> Macaroni</label>
+                    <label><input type="checkbox" name="aliments" value="riz"> Riz</label>
+                    <label><input type="checkbox" name="aliments" value="frites" checked> Frites</label>
+                    <label><input type="checkbox" name="aliments" value="couscous"> Couscous</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="lifestyle">Décrivez votre mode de vie et vos loisirs :</label>
+                <textarea id="lifestyle" name="lifestyle" placeholder="Racontez-nous vos activités quotidiennes..."></textarea>
+            </div>
+        </fieldset>
+
+        <div class="button-group">
+            <button type="submit" class="btn-submit">Envoyer</button>
+            <button type="reset" class="btn-reset">Remettre à zéro</button>
+            <button type="button" class="btn-useless" onclick="alert('Je ne sers vraiment à rien !')">Je sers à rien</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
